@@ -1,0 +1,17 @@
+[user]
+	name = Daniel Proctor
+	email = danielproctor31@gmail.com
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
