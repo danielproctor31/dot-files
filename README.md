@@ -14,8 +14,11 @@ stow bash
 ### ZSH
 
 https://ohmyz.sh/#install
+
 https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
 https://starship.rs/guide/#%F0%9F%9A%80-installation
 
 ```
@@ -30,6 +33,7 @@ curl -sS https://starship.rs/install.sh | sh
 ### NeoVim
 
 https://github.com/neovim/neovim/wiki/Installing-Neovim
+
 https://github.com/junegunn/vim-plug
 
 ```
