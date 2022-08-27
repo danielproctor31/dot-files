@@ -2,14 +2,14 @@
 
 Uses GNU Stow: https://www.gnu.org/software/stow/
 
-example
+Example:
 ```
 git clone git@github.com:danielproctor31/dot-files.git
 cd dot-files
 stow bash
 ```
 
-### Prerequisites
+## Prerequisites
 
 ### ZSH
 
