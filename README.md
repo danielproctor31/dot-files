@@ -19,6 +19,8 @@ https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
+https://github.com/lukechilds/zsh-nvm
+
 https://starship.rs/guide/#%F0%9F%9A%80-installation
 
 ```
@@ -26,6 +28,7 @@ https://starship.rs/guide/#%F0%9F%9A%80-installation
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 curl -sS https://starship.rs/install.sh | sh
 ```
 
