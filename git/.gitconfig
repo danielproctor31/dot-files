@@ -1,8 +1,9 @@
 [user]
 	name = Daniel Proctor
 	email = dan@danielproctor.dev
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+# enable when usiing wsl
+# [credential]
+	# helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 [core]
 	editor = vim
 [init]
