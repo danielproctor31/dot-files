@@ -21,11 +21,10 @@ https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 https://starship.rs/guide/#%F0%9F%9A%80-installation
 
-https://rvm.io/
+https://github.com/lukechilds/zsh-nvm
 
-https://github.com/nvm-sh/nvm
+https://github.com/mattberther/zsh-pyenv
 
-https://github.com/pyenv/pyenv
 
 Install a nerd font for starship:
 
@@ -41,15 +40,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+git clone https://github.com/mattberther/zsh-pyenv ~/.oh-my-zsh/custom/plugins/zsh-pyenv
 
 curl -sS https://starship.rs/install.sh | sh
-
-curl https://pyenv.run | bash
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-
-gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io | bash -s stable
 ```
 
 ### NeoVim
