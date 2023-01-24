@@ -21,11 +21,6 @@ https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 https://starship.rs/guide/#%F0%9F%9A%80-installation
 
-https://github.com/lukechilds/zsh-nvm
-
-https://github.com/mattberther/zsh-pyenv
-
-
 Install a nerd font for starship:
 
 https://www.nerdfonts.com/font-downloads
@@ -39,8 +34,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-git clone https://github.com/mattberther/zsh-pyenv ~/.oh-my-zsh/custom/plugins/zsh-pyenv
 
 curl -sS https://starship.rs/install.sh | sh
 ```
