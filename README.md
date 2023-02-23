@@ -10,7 +10,6 @@
   - Some themes may require a [Powerline font](https://github.com/powerline/fonts)
 - [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
   - Additionaly install a [Nerd Font](https://www.nerdfonts.com/font-downloads)
-- [Nix](https://nixos.org/download.html#nix-install-linux)
 
 Run the following:
 ```
