@@ -100,9 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias docker="podman"
-alias docker-compose="podman-compose"
-
 # ssh-agent
 if [ -z "$SSH_AUTH_SOCK" ]; then
    # Check for a currently running instance of the agent
