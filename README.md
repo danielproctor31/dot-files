@@ -18,6 +18,9 @@
 Fonts can be acquired from [homebrew-linux-fonts](https://github.com/Homebrew/homebrew-linux-fonts) using Brew:
 
 ```
+# install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # one-time setup after installing brew
 brew tap homebrew/linux-fonts
 ln -s /home/linuxbrew/.linuxbrew/share/fonts ~/.local/share/fonts
