@@ -111,11 +111,13 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
    eval `cat $HOME/.ssh/ssh-agent`
 fi
 
-# starship
-eval "$(starship init zsh)"
-
+# brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
   [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# starship
+eval "$(starship init zsh)"
