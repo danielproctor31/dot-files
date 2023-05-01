@@ -3,6 +3,10 @@
 ## Prerequisites
 
 - [GNU Stow](https://www.gnu.org/software/stow/)
+- Git
+- Zsh
+- [Brew](https://brew.sh/)
+- NeoVim
 
 ### ZSH
 
@@ -10,6 +14,18 @@
   - Some themes may require a [Powerline font](https://github.com/powerline/fonts)
 - [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
   - Additionaly install a [Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+Fonts can be acquired from [homebrew-linux-fonts](https://github.com/Homebrew/homebrew-linux-fonts) using Brew:
+
+```
+# one-time setup after installing brew
+brew tap homebrew/linux-fonts
+ln -s /home/linuxbrew/.linuxbrew/share/fonts ~/.local/share/fonts
+fc-cache -fv
+
+# install a font
+brew install font-caskaydia-cove-nerd-font --HEAD
+```
 
 Run the following:
 ```
