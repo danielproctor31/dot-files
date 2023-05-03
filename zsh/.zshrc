@@ -113,19 +113,22 @@ fi
 
 # PATH
 # bin
-export PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 
-# dotnet
+# dotnet tools
 export PATH="$PATH:$HOME/.dotnet/tools"
 
-# brew
-if [ "$(uname)" = "Darwin" ]; then
+# nvm
+export NVM_DIR="$HOME/.nvm"
+
+# brew specific items
+if [ "$(uname)" = "Darwin" ]; then # macos
    # dotnet
    export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
    # nvm
    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-else
+else # linux
    # brew
    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
    # dotnet
