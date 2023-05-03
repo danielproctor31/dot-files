@@ -111,13 +111,29 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
    eval `cat $HOME/.ssh/ssh-agent`
 fi
 
-# brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# PATH
+# bin
+export PATH="/usr/local/bin:$PATH"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+# dotnet
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+# brew
+if [ "$(uname)" = "Darwin" ]; then
+   # dotnet
+   export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
+   # nvm
+   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+else
+   # brew
+   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+   # dotnet
+   export PATH="/home/linuxbrew/.linuxbrew/opt/dotnet@6/bin:$PATH"
+   # nvm
+   [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+   [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+fi
 
 # starship
 eval "$(starship init zsh)"
