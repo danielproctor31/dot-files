@@ -9,7 +9,11 @@ is_mac() {
 }
 
 # install build tools
-xcode-select --install;
+if [ is_mac ]; then
+    xcode-select --install;
+fi
+
+
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
@@ -25,7 +29,7 @@ if ! which brew; then
 fi
 
 # setup cask fonts
-if [ is_mac ]; then # macos
+if [ is_mac ]; then
     brew tap homebrew/cask-fonts;
 else # linux
     brew tap homebrew/linux-fonts;
