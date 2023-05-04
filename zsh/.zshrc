@@ -111,6 +111,16 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
    eval `cat $HOME/.ssh/ssh-agent`
 fi
 
+# CUSTOM CONFIGURATION
+
+is_mac() {
+    if [ "$(uname)" = "Darwin" ]; then
+        return 1;
+    else
+        return 0;
+    fi
+}
+
 # PATH
 # bin
 PATH="/usr/local/bin:$PATH"
@@ -122,7 +132,7 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export NVM_DIR="$HOME/.nvm"
 
 # brew specific items
-if [ "$(uname)" = "Darwin" ]; then # macos
+if [ "$(is_mac)" ]; then # macos
    # dotnet
    export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
    # nvm

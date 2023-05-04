@@ -9,7 +9,7 @@ is_mac() {
 }
 
 # install build tools
-if [ is_mac ]; then
+if [ "$(is_mac)" ]; then
     xcode-select --install;
 fi
 
@@ -27,23 +27,28 @@ if ! which brew; then
 fi
 
 # setup cask fonts
-if [ is_mac ]; then
+if [ "$(is_mac)" ]; then
     brew tap homebrew/cask-fonts;
 else # linux
     brew tap homebrew/linux-fonts;
     # one-time setup for font installation
     ln -s /home/linuxbrew/.linuxbrew/share/fonts ~/.local/share/fonts;
-    fc-cache -fv;
+    # refresh font-cache
+    if which fc-cache; then
+        fc-cache -fv;
+    fi
 fi
 
-# install a font
-brew install font-caskaydia-cove-nerd-font;
+# install packages
+brew install \
+    font-caskaydia-cove-nerd-font \
+    starship \
+    nvim \
+    pyenv \
+    nvm \
+    dotnet@6
 
-# Install starship
-brew install starship;
-
-# nvim
-brew install nvim
+# install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim';
 
