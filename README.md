@@ -10,8 +10,8 @@
 ## Example Usage
 
 ```
-git clone git@github.com:danielproctor31/dot-files.git
-cd dot-files
+git clone git@github.com:danielproctor31/dot-files.git $HOME/dot-files
+cd $HOME/dot-files
 
 chmod u+x ./setup.sh
 ./setup.sh
