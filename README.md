@@ -13,7 +13,7 @@
 git clone git@github.com:danielproctor31/dot-files.git
 cd dot-files
 
-chmod +x ./setup.sh
+chmod u+x ./setup.sh
 ./setup.sh
 
 stow git
