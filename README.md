@@ -13,12 +13,9 @@
 git clone git@github.com:danielproctor31/dot-files.git $HOME/dot-files
 cd $HOME/dot-files
 
-chmod u+x ./setup.sh
+chmod u+x ./setup.sh ./install.sh
 ./setup.sh
-
-stow git
-stow zsh
-stow nvim
+./install.sh
 ```
 
 ## NeoVim
