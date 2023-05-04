@@ -115,9 +115,9 @@ fi
 
 is_mac() {
     if [ "$(uname)" = "Darwin" ]; then
-        return 1;
-    else
         return 0;
+    else
+        return 1;
     fi
 }
 
@@ -132,7 +132,7 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export NVM_DIR="$HOME/.nvm"
 
 # brew specific items
-if [ "$(is_mac)" ]; then # macos
+if is_mac; then # macos
    # dotnet
    export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
    # nvm

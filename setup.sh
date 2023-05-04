@@ -2,14 +2,14 @@
 
 is_mac() {
     if [ "$(uname)" = "Darwin" ]; then
-        return 1;
-    else
         return 0;
+    else
+        return 1;
     fi
 }
 
 # install build tools
-if [ "$(is_mac)" ]; then
+if [ is_mac ]; then
     xcode-select --install;
 fi
 
@@ -27,7 +27,7 @@ if ! which brew; then
 fi
 
 # setup cask fonts
-if [ "$(is_mac)" ]; then
+if [ is_mac ]; then # macos
     brew tap homebrew/cask-fonts;
 else # linux
     brew tap homebrew/linux-fonts;
