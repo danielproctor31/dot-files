@@ -44,9 +44,7 @@ brew install \
     font-caskaydia-cove-nerd-font \
     starship \
     nvim \
-    pyenv \
     nvm \
-    dotnet@6
 
 # install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
