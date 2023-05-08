@@ -2,7 +2,7 @@
 	name = Daniel Proctor
 	email = dan@danielproctor.dev
 [core]
-	editor = nvim
+	editor = vim
 [init]
 	defaultBranch = main
 [alias]
