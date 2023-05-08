@@ -5,8 +5,11 @@
 - [GNU Stow](https://www.gnu.org/software/stow/)
 - Git
 - Zsh
-- `build-essential` package (for brew).
-  - `gcc`, `g++`, `libc6-dev` and `make` on non debian systems.
+
+## Recommended
+- `build-essential` - for Debian/Ubuntu.
+- `gcc`, `g++`, `glibc-devel` and `make` on Fedora.
+- xcode command line tools on MacOS. The installer script will install this if MacOS is detected.
 
 ## Example Usage
 
