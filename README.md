@@ -18,9 +18,3 @@ chmod u+x ./setup.sh ./install.sh
 ./setup.sh
 ./install.sh
 ```
-
-## NeoVim
-
-- Uses [VimPlug](https://github.com/junegunn/vim-plug)
-
-After installation, load nvim and run `:PlugInstall`.
