@@ -6,6 +6,7 @@
 - Git
 - Zsh
 - `build-essential` package (for brew).
+  - `gcc`, `g++`, `libc6-dev` and `make` on non debian systems.
 
 ## Example Usage
 
