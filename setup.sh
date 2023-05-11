@@ -9,7 +9,7 @@ is_mac() {
 }
 
 # install build tools
-if [ is_mac ]; then
+if is_mac; then
     xcode-select --install;
 fi
 
