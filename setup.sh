@@ -26,7 +26,7 @@ if ! which brew; then
 fi
 
 # setup cask fonts
-if [ is_mac ]; then # macos
+if is_mac; then # macos
     brew tap homebrew/cask-fonts;
 else # linux
     brew tap homebrew/linux-fonts;
@@ -41,6 +41,8 @@ fi
 # install packages
 brew install \
     font-caskaydia-cove-nerd-font \
-    starship
+    starship \
+    nvm \
+    dotnet@6
 
 echo "finished";
