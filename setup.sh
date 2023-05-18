@@ -26,7 +26,8 @@ if is_mac; then
     brew tap homebrew/cask-fonts;  
     brew install \
         font-caskaydia-cove-nerd-font \
-        starship
+        starship \
+        stow
 fi
 
 echo "finished";
