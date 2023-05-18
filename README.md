@@ -7,8 +7,6 @@
 - Zsh
 
 ## Brew Prerequisites (Recommended)
-- `build-essential` `procps` `curl` `file` `git` - for Debian/Ubuntu.
-- `gcc` `g++` `glibc-devel` `make` `procps-ng` `curl` `file` `git` on Fedora.
 - xcode command line tools on MacOS. The installer script will install this if MacOS is detected.
 
 ## Example Usage
