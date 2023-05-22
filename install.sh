@@ -1,7 +1,8 @@
-echo "Linking dot-files..."
+#!/bin/bash
 
-stow git
-stow zsh
-stow nvim
+echo "Linking dot-files...";
 
-echo "Finished"
+stow git;
+stow zsh;
+
+echo "Finished";

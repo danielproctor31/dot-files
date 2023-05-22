@@ -112,6 +112,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # CUSTOM CONFIGURATION
+
 is_mac() {
     if [ "$(uname)" = "Darwin" ]; then
         return 0;
@@ -121,9 +122,11 @@ is_mac() {
 }
 
 if is_mac; then
-    PATH="/usr/local/bin:$PATH"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    PATH="/usr/local/bin:$PATH";
+    eval "$(/opt/homebrew/bin/brew shellenv)";
+else
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 # starship
-eval "$(starship init zsh)"
+eval "$(starship init zsh)";

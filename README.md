@@ -7,7 +7,7 @@
 - Zsh
 
 ## Brew Prerequisites (Recommended)
-- xcode command line tools on MacOS. The installer script will install this if MacOS is detected.
+- xcode command line tools on MacOS. The brew installation should offer to install this.
 
 ## Example Usage
 

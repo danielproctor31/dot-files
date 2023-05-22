@@ -16,18 +16,19 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
 
 if is_mac; then
-    # install build tools
-    xcode-select --install;
     # Install brew
     if ! which brew; then
         bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
     fi
     # install packages
-    brew tap homebrew/cask-fonts;  
+    brew tap homebrew/cask-fonts;
     brew install \
         font-caskaydia-cove-nerd-font \
         starship \
-        stow
+        stow;
+else
+    # install starship
+    curl -sS https://starship.rs/install.sh | sh;
 fi
 
 echo "finished";
