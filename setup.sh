@@ -21,11 +21,13 @@ if is_mac; then
         bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
     fi
     # install packages
-    brew tap homebrew/cask-fonts;
     brew install \
-        font-caskaydia-cove-nerd-font \
         starship \
         stow;
+
+    brew tap homebrew/cask-fonts;
+    brew install --cask font-caskaydia-cove-nerd-font;
+
 else
     # install starship
     curl -sS https://starship.rs/install.sh | sh;
