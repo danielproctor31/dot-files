@@ -28,9 +28,4 @@ if is_mac; then
     brew tap homebrew/cask-fonts;
     brew install --cask font-caskaydia-cove-nerd-font;
 
-else
-    # install starship
-    curl -sS https://starship.rs/install.sh | sh;
-fi
-
 echo "finished";

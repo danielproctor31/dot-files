@@ -125,6 +125,3 @@ if is_mac; then
     PATH="/usr/local/bin:$PATH";
     eval "$(/opt/homebrew/bin/brew shellenv)";
 fi
-
-# starship
-eval "$(starship init zsh)";
