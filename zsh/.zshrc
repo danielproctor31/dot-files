@@ -112,6 +112,12 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # CUSTOM CONFIGURATION
+# user binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+# diaryman
+export DIARY_DIR="$HOME/Documents/Diary"
+alias diary="diaryman"
 
 is_mac() {
     if [ "$(uname)" = "Darwin" ]; then
@@ -125,3 +131,5 @@ if is_mac; then
     PATH="/usr/local/bin:$PATH";
     eval "$(/opt/homebrew/bin/brew shellenv)";
 fi
+
+if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
