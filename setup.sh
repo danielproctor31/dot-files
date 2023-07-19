@@ -12,8 +12,8 @@ is_mac() {
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
 
 # oh-my-zsh plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting;
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting;
+git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions;
 
 if is_mac; then
     # Install brew
@@ -22,10 +22,10 @@ if is_mac; then
     fi
     # install packages
     brew install \
-        starship \
         stow;
 
     brew tap homebrew/cask-fonts;
     brew install --cask font-caskaydia-cove-nerd-font;
+fi
 
 echo "finished";
