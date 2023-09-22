@@ -115,10 +115,10 @@ fi
 # user binaries
 export PATH="$HOME/.local/bin:$PATH"
 
-# diaryman
-export DIARY_DIR="$HOME/Documents/Diary"
-alias diary="diaryman"
+# brew binaries
+PATH="/usr/local/bin:$PATH";
 
+# brew
 is_mac() {
     if [ "$(uname)" = "Darwin" ]; then
         return 0;
@@ -128,8 +128,18 @@ is_mac() {
 }
 
 if is_mac; then
-    PATH="/usr/local/bin:$PATH";
     eval "$(/opt/homebrew/bin/brew shellenv)";
+else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# nix
 if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# dotnet
+PATH="$HOME/.dotnet/tools:$PATH";
