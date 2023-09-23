@@ -127,9 +127,9 @@ is_mac() {
     fi
 }
 
-if is_mac; then
+if is_mac && which brew &> /dev/null; then
     eval "$(/opt/homebrew/bin/brew shellenv)";
-else
+elif which brew &> /dev/null; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
