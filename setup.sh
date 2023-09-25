@@ -21,13 +21,15 @@ if ! which brew; then
 fi
 
 if is_mac; then
-    # install stow on mac
+    eval "$(/opt/homebrew/bin/brew shellenv)";
+
     brew install \
         stow;
 
     brew tap homebrew/cask-fonts;
     brew install --cask font-caskaydia-cove-nerd-font;
 else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     brew tap homebrew/linux-fonts;
     ln -s /home/linuxbrew/.linuxbrew/share/fonts -t ~/.local/share;
     fc-cache -fv;

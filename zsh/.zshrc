@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,13 +112,6 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # CUSTOM CONFIGURATION
-# user binaries
-export PATH="$HOME/.local/bin:$PATH"
-
-# brew binaries
-PATH="/usr/local/bin:$PATH";
-
-# brew
 is_mac() {
     if [ "$(uname)" = "Darwin" ]; then
         return 0;
@@ -127,9 +120,19 @@ is_mac() {
     fi
 }
 
-if is_mac && which brew &> /dev/null; then
+# user binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+# dotnet
+PATH="$HOME/.dotnet/tools:$PATH";
+
+# brew binaries
+PATH="/usr/local/bin:$PATH";
+
+# brew
+if is_mac; then
     eval "$(/opt/homebrew/bin/brew shellenv)";
-elif which brew &> /dev/null; then
+else
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
@@ -140,6 +143,3 @@ if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.n
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# dotnet
-PATH="$HOME/.dotnet/tools:$PATH";
