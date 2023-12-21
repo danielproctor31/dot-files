@@ -123,9 +123,6 @@ is_mac() {
 # user binaries
 export PATH="$HOME/.local/bin:$PATH"
 
-# dotnet
-PATH="$HOME/.dotnet/tools:$PATH";
-
 # brew binaries
 PATH="/usr/local/bin:$PATH";
 
@@ -138,8 +135,3 @@ fi
 
 # nix
 if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
