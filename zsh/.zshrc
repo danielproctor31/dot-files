@@ -136,6 +136,9 @@ fi
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
+# colima
+export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
+
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
 {
