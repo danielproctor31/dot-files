@@ -133,8 +133,8 @@ else
 fi
 
 # dotnet
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$PATH:$HOME/.dotnet/tools
 
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
@@ -161,8 +161,6 @@ if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.n
 export NVM_DIR="$HOME/.nvm"
 
 if is_mac; then
-   # colima
-   export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
    # nvm
    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
