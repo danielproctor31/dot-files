@@ -1,5 +1,5 @@
 # From https://learn.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup
-oh-my-posh init pwsh --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/jandedobbeleer.omp.json" | Invoke-Expression
 
 # From https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/creating-profiles?view=powershell-7.3
 ## Set PSReadLine options and keybindings

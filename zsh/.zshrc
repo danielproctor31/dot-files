@@ -133,7 +133,7 @@ else
 fi
 
 # dotnet
-export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$PATH:$HOME/.dotnet
 export PATH=$PATH:$HOME/.dotnet/tools
 
 # zsh parameter completion for the dotnet CLI
@@ -170,5 +170,7 @@ else
    [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
-# starship
-eval "$(starship init zsh)"
+# oh-my-posh
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json' init zsh)"
+fi

@@ -15,6 +15,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting;
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions;
 
+
 # nvim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -32,13 +33,16 @@ if is_mac; then
         nvim;
 
     brew tap homebrew/cask-fonts;
-    brew install --cask font-caskaydia-cove-nerd-font;
 else
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    brew tap homebrew/linux-fonts;
+
+    brew install \
+        nvim \
+        oh-my-posh
+
     ln -s /home/linuxbrew/.linuxbrew/share/fonts -t ~/.local/share;
     fc-cache -fv;
-    brew install font-caskaydia-cove-nerd-font;
+    brew install --cask font-caskaydia-cove-nerd-font;
 fi
 
 echo "finished";
