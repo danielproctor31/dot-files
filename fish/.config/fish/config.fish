@@ -28,21 +28,20 @@ if test -x "$brew_bin"
 end
 
 # --------------------------------------------------
+# fnm (must come after Homebrew so fnm is on PATH)
+# --------------------------------------------------
+
+if type -q fnm
+    fnm env --use-on-cd --shell fish | source
+end
+
+# --------------------------------------------------
 # .NET
 # --------------------------------------------------
 
 set -gx DOTNET_ROOT "$HOME/.dotnet"
 fish_add_path --global "$DOTNET_ROOT"
 fish_add_path --global "$DOTNET_ROOT/tools"
-
-# --------------------------------------------------
-# Nix
-# --------------------------------------------------
-
-# Source Fish-specific Nix profile setup if available
-if test -f "$HOME/.nix-profile/etc/profile.d/nix.fish"
-    source "$HOME/.nix-profile/etc/profile.d/nix.fish"
-end
 
 # --------------------------------------------------
 # OpenCode

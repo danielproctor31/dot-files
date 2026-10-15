@@ -66,20 +66,32 @@ echo "Using Homebrew at $brew_bin"
 brew_env=$("$brew_bin" shellenv)
 eval "$brew_env"
 
-echo "Installing packages: fish stow nvim fnm..."
-brew install fish stow nvim fnm
+if [ "$os" = "Darwin" ]; then
+    echo "Installing packages: fish stow nvim fnm..."
+    brew install fish stow nvim fnm
+else
+    echo "Installing packages: nvim fnm..."
+    brew install nvim fnm
+fi
 
 echo "Installing fonts..."
-if [ "$os" = "Darwin" ]; then
-    brew install --cask font-caskaydia-cove-nerd-font
-else
+if [ "$os" == "Darwin" ]; then
     mkdir -p "$HOME/.local/share"
     ln -sfn /home/linuxbrew/.linuxbrew/share/fonts "$HOME/.local/share/fonts"
     fc-cache -fv
     brew install --cask font-caskaydia-cove-nerd-font
 fi
 
-fish_bin="$(brew --prefix)/bin/fish"
+
+if [ "$os" = "Darwin" ]; then
+    fish_bin="$(brew --prefix)/bin/fish"
+else
+    fish_bin=$(command -v fish || true)
+    if [ -z "$fish_bin" ]; then
+        printf 'fish not found; install it via apt first.\n' >&2
+        exit 1
+    fi
+fi
 if ! grep -qxF "$fish_bin" /etc/shells; then
     echo "Adding $fish_bin to /etc/shells..."
     echo "$fish_bin" | sudo tee -a /etc/shells >/dev/null
