@@ -67,11 +67,13 @@ brew_env=$("$brew_bin" shellenv)
 eval "$brew_env"
 
 if [ "$os" = "Darwin" ]; then
-    echo "Installing packages: fish stow nvim fnm..."
-    brew install fish stow nvim fnm
+    echo "Installing packages: fish stow nvim fnm tree-sitter-cli..."
+    brew install fish stow nvim fnm tree-sitter-cli
 else
     echo "Installing packages: nvim fnm..."
     brew install nvim fnm
+    echo "Installing tree-sitter-cli via apt..."
+    sudo apt-get install -y tree-sitter-cli
 fi
 
 echo "Installing fonts..."
