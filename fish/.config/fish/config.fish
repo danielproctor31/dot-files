@@ -49,10 +49,17 @@ fish_add_path --global "$DOTNET_ROOT/tools"
 
 fish_add_path --global "$HOME/.opencode/bin"
 
+if status is-interactive;
+# --------------------------------------------------
+# Zoxide
+#---------------------------------------------------
+    if type -q zoxide
+        zoxide init fish | source
+    end
 # --------------------------------------------------
 # Starship prompt
 # --------------------------------------------------
-
-if status is-interactive; and command -q starship
-    starship init fish | source
+    if type -q starship
+        starship init fish | source
+    end    
 end
