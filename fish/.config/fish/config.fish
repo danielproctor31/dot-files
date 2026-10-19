@@ -28,14 +28,6 @@ if test -x "$brew_bin"
 end
 
 # --------------------------------------------------
-# fnm (must come after Homebrew so fnm is on PATH)
-# --------------------------------------------------
-
-if type -q fnm
-    fnm env --use-on-cd --shell fish | source
-end
-
-# --------------------------------------------------
 # .NET
 # --------------------------------------------------
 
@@ -56,10 +48,4 @@ if status is-interactive;
     if type -q zoxide
         zoxide init fish | source
     end
-# --------------------------------------------------
-# Starship prompt
-# --------------------------------------------------
-    if type -q starship
-        starship init fish | source
-    end    
 end

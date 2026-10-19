@@ -67,22 +67,22 @@ brew_env=$("$brew_bin" shellenv)
 eval "$brew_env"
 
 if [ "$os" = "Darwin" ]; then
-    echo "Installing packages: fish stow nvim fnm tree-sitter-cli..."
-    brew install fish stow nvim fnm tree-sitter-cli
+    echo "Installing packages"
+    brew install fish stow nvim powershell tree-sitter-cli
 else
-    echo "Installing packages: nvim fnm..."
-    brew install nvim fnm
-    echo "Installing tree-sitter-cli via apt..."
-    sudo apt-get install -y tree-sitter-cli
+    echo "Installing packages"
+    brew install nvim powershell
+    sudo apt-get install -y git fish stow tree-sitter-cli
 fi
 
 echo "Installing fonts..."
-if [ "$os" == "Darwin" ]; then
+if [ "$os" != "Darwin" ]; then
     mkdir -p "$HOME/.local/share"
     ln -sfn /home/linuxbrew/.linuxbrew/share/fonts "$HOME/.local/share/fonts"
     fc-cache -fv
-    brew install --cask font-caskaydia-cove-nerd-font
 fi
+
+brew install --cask font-caskaydia-cove-nerd-font
 
 
 if [ "$os" = "Darwin" ]; then
@@ -106,5 +106,8 @@ if [ "${SHELL:-}" != "$fish_bin" ]; then
 else
     echo "fish is already the default shell"
 fi
+
+echo "Installing fisher and plugins (nvm.fish, tide)..."
+"$fish_bin" -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher jorgebucaran/nvm.fish IlanCosman/tide@v6'
 
 echo "Finished"

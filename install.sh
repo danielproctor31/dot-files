@@ -20,9 +20,21 @@ if ! command -v stow >/dev/null; then
     exit 1
 fi
 
+if command -v pwsh >/dev/null; then
+    echo "Configuring PowerShell modules..."
+    pwsh -NoProfile -Command "
+        if (-not (Get-Module -ListAvailable -Name Terminal-Icons)) {
+            [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+            Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null;
+            Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted -ErrorAction SilentlyContinue;
+            Install-Module -Name Terminal-Icons -Scope CurrentUser -Force -AllowClobber -Confirm:\$false -SkipPublisherCheck;
+        }
+    "
+fi
+
 echo "Linking dot-files..."
 
-for package in git fish nvim; do
+for package in git fish nvim powershell; do
     stow --restow --dir "$PWD" --target "$HOME" "$package"
 done
 

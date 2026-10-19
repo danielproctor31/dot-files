@@ -2,19 +2,11 @@
 
 Personal configuration for macOS and Linux, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## Contents
-
-| Package | Description                                                              |
-| ------- | ------------------------------------------------------------------------ |
-| `fish`  | [fish](https://fishshell.com/) shell config (Homebrew, fnm, .NET, Nix)   |
-| `git`   | `.gitconfig`                                                             |
-| `nvim`  | Neovim config, based on [Kickstart](https://github.com/nvim-lua/kickstart.nvim) |
-
 ## Prerequisites
 
 - Git
-- **Linux:** `fish` and `stow` installed via your package manager, e.g. `sudo apt install fish stow`
-- **macOS:** nothing else; `setup.sh` installs everything via Homebrew
+- **Linux:** `fish` `stow` and `git` installed via your package manager
+- **macOS:** nothing else; `setup.sh` installs everything via Homebrew/apt
 
 ## Installation
 
@@ -33,13 +25,14 @@ Installs the tools the configs depend on:
 - Updates git submodules
 - Installs [vim-plug](https://github.com/junegunn/vim-plug)
 - Installs Homebrew if missing
-- Installs `nvim` and `fnm` via Homebrew (plus `fish` and `stow` on macOS only)
-- Installs the Caskaydia Cove Nerd Font
+- Installs packages via brew
+- Installs the Caskaydia Cove Nerd Font via brew
 - Adds fish to `/etc/shells` and sets it as the default shell (uses Homebrew's fish on macOS, the system fish on Linux)
+- Installs fisher and plugins
 
 ### `install.sh`
 
-Symlinks the `fish`, `git` and `nvim` packages into `$HOME` with `stow --restow`. Existing files that conflict with the links must be moved or removed first.
+Symlinks the config files into `$HOME` with `stow --restow`. Existing files that conflict with the links must be moved or removed first.
 
 ## Updating
 
@@ -49,7 +42,8 @@ git submodule update --init --recursive --remote
 ./install.sh
 ```
 
+
 ## Notes
 
-- Open a new fish session after installing so `fnm` and Homebrew are on `PATH`.
-- Node versions are managed with [fnm](https://github.com/Schniz/fnm); run `fnm install --lts` then `fnm use`.
+- Open a new fish session after installing so Homebrew are on `PATH`.
+- Run `tide configure` to modify prompt theme.
