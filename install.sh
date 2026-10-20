@@ -38,4 +38,7 @@ for package in git fish nvim powershell; do
     stow --restow --dir "$PWD" --target "$HOME" "$package"
 done
 
+echo "Installing fisher plugins..."
+fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update'
+
 echo "Finished"

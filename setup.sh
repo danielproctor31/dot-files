@@ -68,10 +68,10 @@ eval "$brew_env"
 
 if [ "$os" = "Darwin" ]; then
     echo "Installing packages"
-    brew install fish stow nvim powershell tree-sitter-cli
+    brew install fish stow nvim powershell oh-my-posh tree-sitter-cli
 else
     echo "Installing packages"
-    brew install nvim powershell
+    brew install nvim powershell oh-my-posh
     sudo apt-get install -y git fish stow tree-sitter-cli
 fi
 
@@ -94,6 +94,7 @@ else
         exit 1
     fi
 fi
+
 if ! grep -qxF "$fish_bin" /etc/shells; then
     echo "Adding $fish_bin to /etc/shells..."
     echo "$fish_bin" | sudo tee -a /etc/shells >/dev/null
@@ -106,8 +107,5 @@ if [ "${SHELL:-}" != "$fish_bin" ]; then
 else
     echo "fish is already the default shell"
 fi
-
-echo "Installing fisher and plugins (nvm.fish, tide)..."
-"$fish_bin" -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher jorgebucaran/nvm.fish IlanCosman/tide@v6'
 
 echo "Finished"
